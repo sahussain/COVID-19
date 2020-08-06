@@ -1,12 +1,14 @@
 # .github/workflows/main.yml
-# This code was imported form https://stackoverflow.com/questions/23793062/can-forks-be-synced-automatically-in-github by user N1ngu
+# This code was updated form orginal https://stackoverflow.com/questions/23793062/can-forks-be-synced-automatically-in-github by user N1ngu
+# There was some errord in the orginal code 
+# This will update the fork with orginal every 15 min between 4 and 6 UTC
 
 name: Merge upstream branches
 on:
   schedule:
      # actually, ~5 minutes is the highest
      # effective frequency you will get
-    - cron:  '* * * * *'
+    - cron:  '*/15 4-6 * * *'
 jobs:
   merge:
     runs-on: ubuntu-latest
